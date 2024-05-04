@@ -33,7 +33,7 @@ class bohater(postac):
     def schowaj(self) -> None:
         self.bron = self.domyslna_bron
         if self.bron == rece:
-            print(f"{self.imie} opuścił ręce :(")
+            print(f"{self.imie} jest uzbrojony tylko w swoje ręce, więc je opuścił :(")
         else:
             print(f"{self.imie} schował a(n) {self.bron.nazwa}")
 

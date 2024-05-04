@@ -8,12 +8,14 @@ x = input('podaj swoje imię dzielny bohaterze: ')
 bohater = bohater(imie=x, hp=100)
 przeciwnik = przeciwnik(imie='Goblin', hp=100, bron=miecz_1)
 print('Na twojej drodze pojawił się dziki goblin!')
+input('continue...')
 while True:
     os.system("cls")
     turn = int(input('Co robisz? \n1 - zaatakuj \n2 - zmien bron \n3 - uciekaj '))
     if turn == 1:
         bohater.att(przeciwnik)
     elif turn == 2:
+        os.system("cls")
         bronie = int(input('wybierz broń: \n 1 - wyrzuć broń z ręki, walcz jak mężczyzna na ręce! \n 2 - mieczyk \n 3 - legendarna wykałaczka'))
         if bohater.bron == 'rece':
             print('nie masz broni!')
@@ -34,17 +36,20 @@ while True:
         bohater.Pasek_hp.update()
         bohater.Pasek_hp.rysuj()
         break
+
+    przeciwnik.Pasek_hp.rysuj()
+
     if przeciwnik.hp <= 0:
         print('Wygrałeś z Goblinem! +10 exp')
         break
 
-    przeciwnik.Pasek_hp.rysuj()
     przeciwnik.att(bohater)
     bohater.Pasek_hp.rysuj()
 
     if bohater.hp <= 0:
         print('You died.')
         break
+    input('continue...')
 
 
 
